@@ -13,6 +13,7 @@ export default function Sidebar({ isOpen, onClose }) {
     { to: '/quality', label: t('nav.quality'), icon: QualityIcon },
     { to: '/map', label: t('nav.map'), icon: MapIcon },
     { to: '/media', label: t('nav.media'), icon: MediaIcon },
+    { to: '/mapper', label: t('nav.mapper'), icon: MapperIcon },
   ];
 
   return (
@@ -95,6 +96,16 @@ function QualityIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
       <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+    </svg>
+  );
+}
+
+function MapperIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <path d="M4 6h7M4 12h7M4 18h7" />
+      <path d="M14 6l3 3-3 3" />
+      <path d="M17 6h3M17 12h3M17 18h3" />
     </svg>
   );
 }

@@ -11,6 +11,7 @@ import SurveyEditPage from './pages/SurveyEditPage';
 import MediaPage from './pages/MediaPage';
 import ReviewQueuePage from './pages/ReviewQueuePage';
 import QualityPage from './pages/QualityPage';
+import DataMapperPage from './pages/DataMapperPage';
 
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
             <Route path="/surveys/:id" element={<ErrorBoundary><SurveyDetailPage /></ErrorBoundary>} />
             <Route path="/surveys/:id/edit" element={<ErrorBoundary><SurveyEditPage /></ErrorBoundary>} />
             <Route path="/media" element={<ErrorBoundary><MediaPage /></ErrorBoundary>} />
+            <Route path="/mapper" element={<ErrorBoundary><DataMapperPage /></ErrorBoundary>} />
           </Route>
         </Routes>
       </BrowserRouter>

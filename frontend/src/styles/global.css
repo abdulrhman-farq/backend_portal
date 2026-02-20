@@ -1770,3 +1770,429 @@ table tr:hover {
   direction: rtl;
   text-align: right;
 }
+
+/* ========== Data Mapper Page ========== */
+.mapper-page {
+  max-width: 1200px;
+}
+
+.mapper-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
+}
+
+.mapper-header h2 {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.mapper-subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin-top: var(--space-xs);
+}
+
+/* Step Indicator */
+.mapper-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: var(--space-xl);
+  padding: var(--space-md);
+  background: var(--bg-card);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+}
+
+.mapper-step {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+}
+
+.mapper-step.active {
+  color: var(--color-primary);
+  background: var(--color-primary-bg);
+}
+
+.mapper-step.done {
+  color: var(--color-success);
+  background: var(--color-success-bg);
+}
+
+.mapper-step-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: var(--font-size-xs);
+  background: var(--bg-primary);
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.mapper-step.active .mapper-step-num {
+  background: var(--color-primary);
+  color: white;
+}
+
+.mapper-step.done .mapper-step-num {
+  background: var(--color-success);
+  color: white;
+}
+
+.mapper-step-label {
+  white-space: nowrap;
+}
+
+.mapper-step-line {
+  width: 48px;
+  height: 2px;
+  background: var(--border-color);
+  flex-shrink: 0;
+  margin: 0 var(--space-sm);
+}
+
+/* Mapper Card */
+.mapper-card {
+  background: var(--bg-card);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.mapper-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.mapper-card-header h3 {
+  font-size: var(--font-size-md);
+  font-weight: 600;
+}
+
+.mapper-card-actions {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.mapper-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-lg);
+  border-top: 1px solid var(--border-color);
+  background: var(--bg-primary);
+}
+
+.mapper-formats {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+/* Textarea */
+.mapper-textarea {
+  width: 100%;
+  padding: var(--space-md) var(--space-lg);
+  border: none;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+  resize: vertical;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  outline: none;
+  min-height: 300px;
+}
+
+.mapper-textarea:focus {
+  background: #fff;
+}
+
+.mapper-error {
+  padding: var(--space-sm) var(--space-lg);
+  background: var(--color-danger-bg);
+  color: #c62828;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+}
+
+/* Stats bar */
+.mapper-stats-bar {
+  display: flex;
+  gap: var(--space-lg);
+  align-items: center;
+  padding: var(--space-md) var(--space-lg);
+  background: var(--bg-card);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  margin-bottom: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.mapper-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.mapper-stat-value {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.mapper-stat-green {
+  color: var(--color-success);
+}
+
+.mapper-stat-orange {
+  color: #e65100;
+}
+
+.mapper-stat-label {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Mapping Table */
+.mapper-table-container {
+  overflow-x: auto;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.mapper-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.mapper-table th {
+  position: sticky;
+  top: 0;
+  background: var(--bg-primary);
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: var(--space-sm) var(--space-md);
+  text-align: start;
+  border-bottom: 2px solid var(--border-color);
+  z-index: 1;
+}
+
+.mapper-table td {
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid var(--border-color);
+  font-size: var(--font-size-sm);
+  vertical-align: middle;
+}
+
+.mapper-table .mapped-row {
+  background: #f0faf0;
+}
+
+.mapper-table .unmapped-row {
+  background: var(--bg-secondary);
+}
+
+.mapper-table .mapped-row:hover,
+.mapper-table .unmapped-row:hover {
+  background: var(--bg-hover);
+}
+
+.mapper-source-cell code {
+  background: var(--bg-primary);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--color-primary);
+  border: 1px solid var(--border-color);
+}
+
+.mapper-sample-cell {
+  max-width: 200px;
+}
+
+.mapper-sample-text {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+  word-break: break-all;
+}
+
+.mapper-arrow-cell {
+  text-align: center;
+  color: var(--text-muted);
+  width: 40px;
+}
+
+.mapper-target-cell {
+  min-width: 260px;
+}
+
+.mapper-select {
+  width: 100%;
+  padding: 6px 10px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  cursor: pointer;
+  outline: none;
+}
+
+.mapper-select:focus {
+  border-color: var(--color-primary);
+  box-shadow: var(--focus-ring);
+}
+
+.mapper-select.mapped {
+  border-color: var(--color-success);
+  color: var(--text-primary);
+  background: #f0faf0;
+  font-weight: 500;
+}
+
+/* Preview Table */
+.mapper-preview-container {
+  overflow: hidden;
+}
+
+.mapper-preview-table-wrap {
+  overflow-x: auto;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.mapper-preview-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-xs);
+}
+
+.mapper-preview-table th {
+  position: sticky;
+  top: 0;
+  background: var(--bg-primary);
+  padding: var(--space-sm) var(--space-md);
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-align: start;
+  border-bottom: 2px solid var(--border-color);
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.mapper-preview-table td {
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid var(--border-color);
+  white-space: nowrap;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mapper-preview-table tr:hover {
+  background: var(--bg-hover);
+}
+
+.mapper-empty-cell {
+  color: var(--text-muted);
+}
+
+.mapper-preview-note {
+  padding: var(--space-sm) var(--space-lg);
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  text-align: center;
+  background: var(--bg-primary);
+  border-top: 1px solid var(--border-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mapper-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+
+  .mapper-steps {
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    justify-content: center;
+  }
+
+  .mapper-step-line {
+    width: 24px;
+  }
+
+  .mapper-step-label {
+    font-size: var(--font-size-xs);
+  }
+
+  .mapper-stats-bar {
+    gap: var(--space-md);
+    justify-content: center;
+  }
+
+  .mapper-card-header {
+    flex-direction: column;
+    gap: var(--space-sm);
+    align-items: flex-start;
+  }
+
+  .mapper-card-footer {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .mapper-card-footer .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .mapper-card-actions {
+    width: 100%;
+  }
+
+  .mapper-card-actions .btn {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .mapper-step-label {
+    display: none;
+  }
+
+  .mapper-step-line {
+    width: 16px;
+  }
+}
